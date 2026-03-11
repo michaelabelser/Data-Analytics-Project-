@@ -97,8 +97,6 @@ Spending trends by age group and shipping preference
 
 Discount usage and impact on sales
 
-(Insert dashboard screenshot or link here)
-
 💼 Business Recommendations
 
 Based on the analysis:
