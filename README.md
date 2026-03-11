@@ -1,112 +1,60 @@
-# Data-Analytics-Project-
-This project analyzes customer shopping behavior using transactional data from 3,900 purchases across various product categories. The goal was to uncover insights into spending patterns, customer segments, product preferences, and subscription behavior to guide strategic business decisions. I used Python, SQL and PowerBI to complete this project. 
+# 🛒 Customer Shopping Behavior Analysis
+*Google Data Analytics Capstone Project*
 
-Customer Shopping Behavior Analysis
-📋 Project Overview
+![Python](https://img.shields.io)
+![SQL](https://img.shields.io)
+![Power BI](https://img.shields.io)
 
-This project analyzes customer shopping behavior using transactional data from 3,900 purchases across various product categories.
-The goal is to uncover insights into:
+## 📋 Project Overview
+This project analyzes transactional data from **3,900 purchases** to uncover insights into spending patterns, customer segments, and product preferences. The goal was to provide data-driven recommendations for marketing and retention strategies.
 
-Spending patterns
+### 🧾 Dataset Summary
+- **Size:** 3,900 rows | 18 columns
+- **Key Features:** Customer demographics, purchase details (amount, category, size), and shopping behavior (discounts, frequency, ratings).
+- **Data Integrity:** Handled 37 null values in the `Review Rating` column.
 
-Customer segments
+---
 
-Product preferences
+## 🧠 Phase 1: Exploratory Data Analysis (Python)
+Performed all data preparation and cleaning using **Pandas, NumPy, Matplotlib, and Seaborn**.
 
-Subscription behavior
+**Key Steps:**
+*   **Missing Data:** Imputed null ratings using the median review score by product category.
+*   **Standardization:** Renamed columns to `snake_case` for database compatibility.
+*   **Feature Engineering:** 
+    *   Binned ages into `age_group`.
+    *   Calculated `purchase_frequency_days`.
+*   **Integration:** Exported the cleaned DataFrame into **PostgreSQL** for deep-dive analysis.
 
-These findings support data-driven marketing and retention strategies.
+---
 
-🧾 Dataset Summary
+## 💾 Phase 2: Business Analysis (SQL)
+Used structured queries in PostgreSQL to answer critical business questions:
 
-Rows: 3,900  Columns: 18
+- **Revenue Analysis:** Compared performance across Gender and Subscription status.
+- **Customer Segmentation:** Classified users as *New*, *Returning*, or *Loyal* based on history.
+- **Discount Impact:** Identified products most reliant on promotions to drive sales.
+- **Top Performers:** Ranked the Top 3 products per category by revenue and rating.
 
-Key Features:
+---
 
-Customer demographics: Age, Gender, Location, Subscription Status
+## 📊 Phase 3: Visualizations (Power BI)
+Created an interactive dashboard to communicate findings to stakeholders.
 
-Purchase details: Item Purchased, Category, Purchase Amount, Season, Size, Color
+<img width="1023" height="576" alt="Dashboard ScreenShot" src="https://github.com/user-attachments/assets/063b043e-334c-40fb-aaca-20a819c96def" />
 
-Shopping behavior: Discount Applied, Promo Code Used, Previous Purchases, Frequency of Purchases, Review Rating, Shipping Type
+**Key Dashboard Views:**
+1. Total revenue by gender and subscription type.
+2. Spending trends by age group and shipping preference.
+3. Correlation between review ratings and discount usage.
 
-Missing Data:
+---
 
-37 null values in the Review Rating column
+## 💼 Business Recommendations
+*   **Boost Subscriptions:** Highlight exclusive member benefits to grow recurring revenue.
+*   **Loyalty Programs:** Incentivize "Returning" buyers to transition into "Loyal" status.
+*   **Discount Optimization:** Rebalance discount policies to protect profit margins on high-rated products.
+*   **Targeted Marketing:** Focus campaigns on high-value age groups identified in the analysis.
 
-🧠 Exploratory Data Analysis (Python)
-
-Performed all data preparation and EDA using Python (pandas, numpy, matplotlib, seaborn).
-
-Steps:
-
-Data Loading: Imported dataset with pandas.read_csv().
-
-Initial Exploration: Used .info() and .describe() to review structure and summary stats.
-
-Missing Data Handling: Imputed null ratings using the median review score by product category.
-
-Column Standardization: Renamed columns to snake_case for readability.
-
-Feature Engineering:
-
-Created age_group by binning customer ages.
-
-Calculated purchase_frequency_days from timestamps.
-
-Dropped redundant promo_code_used column.
-
-Data Consistency Check: Ensured logical relationships between discount and promo variables.
-
-Database Integration: Uploaded cleaned DataFrame into PostgreSQL for SQL analysis.
-
-💾 SQL Business Analysis (PostgreSQL)
-
-Analyzed transactional trends and customer patterns using structured queries.
-
-Key Business Queries:
-
-Revenue by Gender: Compared total revenue between male and female customers.
-
-High-Spending Discount Users: Found customers using discounts but exceeding average spend.
-
-Top 5 Products by Rating: Ranked products with highest average review scores.
-
-Shipping Type Comparison: Compared average purchase amounts between Standard and Express shipping.
-
-Subscribers vs. Non-Subscribers: Analyzed revenue and average spend across segments.
-
-Discount-Dependent Products: Identified top 5 products most reliant on discounts.
-
-Customer Segmentation: Classified customers as New, Returning, or Loyal based on purchase history.
-
-Top 3 Products per Category: Listed best-selling items by category.
-
-Repeat Buyers & Subscriptions: Measured correlation between frequent purchases and subscription likelihood.
-
-Revenue by Age Group: Quantified total revenue per age group.
-
-📊 Power BI Dashboard
-
-Created an interactive Power BI dashboard to visualize:
-
-Total revenue by gender and subscription type
-
-Top products and categories by revenue and rating
-
-Spending trends by age group and shipping preference
-
-Discount usage and impact on sales
-
-💼 Business Recommendations
-
-Based on the analysis:
-
-Boost Subscriptions: Highlight exclusive member benefits to grow recurring revenue.
-
-Customer Loyalty Programs: Incentivize repeat buyers to transition into “Loyal” customers.
-
-Review Discount Policy: Rebalance discounts to protect profit margins.
-
-Product Positioning: Promote top-rated and high-selling products in campaigns.
-
-Targeted Marketing: Focus on high-value age groups and express-shipping customers.
+---
+*Created as part of the Google Data Analytics Professional Certificate.*
